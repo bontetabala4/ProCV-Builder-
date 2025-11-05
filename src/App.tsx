@@ -1,25 +1,36 @@
-import './App.css'
+
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './components/layout/Header';
+import { ToastProvider } from './components/providers/ToastProvider';
+import { Dashboard } from './pages/Dashboard';
+import { CVBuilder } from './pages/CVBuilder';
+import { CoverBuilder } from './pages/CoverBuilder';
+import { Templates } from './pages/Templates';
+import { Settings } from './pages/Settings';
+import { Login } from './pages/auth/Login';
+import { Register } from './pages/auth/Register';
+
+import './App.css';
 
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>ProCV Builder</h1>
-        <p>Créateur professionnel de CV et lettres de motivation</p>
-      </header>
-      <main>
-        <div className="welcome-section">
-          <h2>Bienvenue dans ProCV Builder</h2>
-          <p>Application en cours de développement...</p>
-          <div className="status">
-            <span>✅ React + TypeScript installés</span>
-            <span>✅ Vite configuré</span>
-            <span>🔄 Prochaines étapes : Structure des dossiers</span>
-          </div>
-        </div>
-      </main>
+      <ToastProvider>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/cv-builder" element={<CVBuilder />} />
+            <Route path="/cover-builder" element={<CoverBuilder />} />
+            <Route path="/templates" element={<Templates />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </main>
+      </ToastProvider>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
