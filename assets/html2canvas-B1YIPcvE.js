@@ -1,0 +1,1 @@
+import{t as e}from"./index-D25Rqa_p.js";export default e();
