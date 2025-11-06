@@ -7,7 +7,7 @@ export default defineConfig({
   ],
   // Base should match the GitHub Pages repository path so assets are resolved correctly when
   // the app is served from https://<user>.github.io/ProCV-Builder/
-  base: '/ProCV-Builder/',
+  base: '/ProCV-Builder-/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
